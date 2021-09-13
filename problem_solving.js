@@ -42,3 +42,36 @@ console.log(count);
 // 	u: 1,
 // 	"!": 1,
 // }
+
+// 2.Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman
+
+function validAnagram(first, second) {
+	if (first.length !== second.length) {
+		return false;
+	}
+
+	var lookup = {};
+
+	for (let i = 0; i < first.length; i++) {
+		let letter = first[i];
+
+		if (!lookup[letter]) {
+			lookup[letter] = 1;
+		} else {
+			lookup[letter]++;
+		}
+	}
+
+	for (let i = 0; i < second.length; i++) {
+		var letter = second[i];
+
+		!lookup[letter] ? false : (lookup[letter] -= 1);
+	}
+
+	return true;
+}
+
+const valid = validAnagram("cinema", "iceman");
+
+console.log(valid);
+//true

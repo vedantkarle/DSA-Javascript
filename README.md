@@ -1,4 +1,4 @@
-## PROBLEM SOLVING
+# PROBLEM SOLVING
 
 ### Understand the Problem :
 * Can I restate the problem in my own words?
@@ -71,4 +71,48 @@ console.log(count);
 // 	u: 1,
 // 	"!": 1,
 // }
+```
+
+# Problem Solving Patterns
+
+## Frequency Counter :
+
+* This pattern uses objects or sets to collect values/frequencies of values
+* This can often avoid the need for nested loops or O(N^2) operations with arrays / strings
+
+### Q.1 Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman
+
+#### SOLN : 
+
+```javascript
+function validAnagram(first, second) {
+	if (first.length !== second.length) {
+		return false;
+	}
+
+	var lookup = {};
+
+	for (let i = 0; i < first.length; i++) {
+		let letter = first[i];
+
+		if (!lookup[letter]) {
+			lookup[letter] = 1;
+		} else {
+			lookup[letter]++;
+		}
+	}
+
+	for (let i = 0; i < second.length; i++) {
+		var letter = second[i];
+
+		!lookup[letter] ? false : (lookup[letter] -= 1);
+	}
+
+	return true;
+}
+
+const valid = validAnagram("cinema", "iceman");
+
+console.log(valid);
+//true
 ```
