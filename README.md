@@ -26,7 +26,7 @@
 ### Look Back and Refactor
 
 
-#### Write a function which takes in a string and returns counts of each character in the string.
+#### Q.Write a function which takes in a string and returns counts of each character in the string.
 
 ##### SOLN : 
 
