@@ -23,8 +23,6 @@
 * Write a simplified solution
 * Then incorporate that difficulty back in
 
-### Look Back and Refactor
-
 
 #### Q.Write a function which takes in a string and returns counts of each character in the string.
 
